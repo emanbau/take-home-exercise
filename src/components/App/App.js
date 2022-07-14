@@ -23,6 +23,18 @@ class App extends React.Component {
       }, 500);
     }
   }
+  
+  async update() {
+    try {
+      await this.fetchInitialData();
+    } catch (error) {
+      // try again after half a second if fails due to race condition
+      console.log('retrying initial data request...');
+      setTimeout(async () => {
+        await this.fetchInitialData();
+      }, 500);
+    }
+  }
 
   async fetchInitialData() {
     const response = await axios.get('/team');
@@ -51,7 +63,7 @@ class App extends React.Component {
           />
         ))}
         {/* Make this new team member link to your form! */}
-        <TeamMember id="new" name="Join us!" title="New Teammate" />
+        <TeamMember id="new" name="Join us!" title="New Teammate" update={() => { this.update(); console.log('this was touched!')}} />
       </div>
     );
   }

@@ -49,6 +49,39 @@
   padding: 0 32px;
 }
 
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -15px;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input {
+  width: 70%;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 5px 10px 5px 10px;
+}
+
+button {
+  width: 70%;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 5px 10px 5px 10px;
+  background: rgb(52, 102, 242);
+  color: #ffffff;
+  font-weight: 500;
+  border: none;
+}
+
 footer {
   background: rgb(52, 102, 242);
   border-radius: 0 0 8px 8px;
